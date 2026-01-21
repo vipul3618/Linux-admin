@@ -1,122 +1,124 @@
-# Operating System (OS)
+# Operating System (OS) – Overview
 
 ## What is an Operating System?
 
-For any system to function, it requires hardware components such as:
+A computer system requires hardware components such as **CPU, RAM, Storage (Hard Disk), Keyboard, and Monitor**.  
+These hardware components alone do **not** make a system usable.
 
-- CPU
-- RAM
-- Monitor
-- Keyboard
-- Hard Disk
+An **Operating System (OS)** is the **system software** that:
 
-These components alone do **not** make a system an operating system.  
-An **Operating System (OS)** is the software that **runs on this hardware and manages it**.
+- Runs on the hardware
+- Manages hardware resources
+- Provides an interface for users and applications
 
 ### Definition
 
-An Operating System is an **interface between the End User and the Hardware**.
+> An Operating System is an **interface between the End User and the Hardware**.
 
-There is no single universal definition of an OS, but commonly:
+Since users usually interact with **applications**, the OS also acts as an interface between **application software and hardware**.
 
-- It acts as an interface between **application software and hardware**
-- It controls application programs running on the system
-- It is a **resource allocator / resource manager** that allocates hardware resources to programs running on the OS (one at a time or via scheduling)
+### Key Roles of an Operating System
+
+- **Control Program**  
+  Controls execution of application programs
+
+- **Resource Manager**  
+  Allocates and manages:
+  - CPU
+  - Memory
+  - Storage
+  - I/O devices
+
+- **Abstraction Provider**  
+  Hides hardware complexity from users and applications
 
 ---
 
-## What Lies Inside a CD/DVD ISO File?
+## Why an Operating System is Required
 
-An OS ISO file contains the core software required to install and run an operating system.
+Without an OS:
 
-It is composed of **three main components**:
+- Programs cannot run efficiently
+- Hardware cannot be shared safely
+- Users cannot interact with the system easily
+
+The OS ensures:
+
+- Efficient resource utilization
+- Fair scheduling of processes
+- Secure and stable system operation
+
+---
+
+## Operating System as Multiple Perspectives
+
+An OS can be viewed differently depending on perspective:
+
+- **Hardware View** → Resource allocator
+- **Software View** → Application controller
+- **User View** → Interface for interaction
+
+All perspectives are valid because an OS performs **multiple responsibilities simultaneously**.
+
+---
+
+## Core Components of an Operating System (High-Level)
+
+An operating system is broadly composed of the following components:
 
 ### 1. Kernel
 - Core of the operating system
+- Runs in **privileged mode**
 - Responsible for:
-  - CPU management
-  - I/O device management
+  - CPU scheduling
   - Memory management
-- Controls application software and system utilities
+  - Process management
+  - Device and I/O management
 
-### 2. System Software
-- Shell
-- Command interpreters
-- Core OS programs
-- Provides system-level functionality
+### 2. System Programs
+- Provide core OS functionality
+- Include:
+  - Shell
+  - Command interpreters
+  - System-level utilities
 
 ### 3. System Utilities
-- Manage functions apart from the kernel
-- Monitoring and analysis tools  
-  - `ps`, `top`, `htop`
-- Package management  
-  - `apt`, `apt-get`
+- Help monitor, maintain, and manage the system
+- Examples:
+  - Process monitoring
+  - System diagnostics
+  - Package management
 
-> The **Kernel** is the core OS. All system software and utilities operate under kernel control.
-
----
-
-## OS Is Like a Big Elephant 🐘
-
-Every aspect of the operating system is correct depending on perspective:
-
-- **Hardware perspective** → Resource allocator
-- **Software perspective** → Application controller
-- **User perspective** → Interface for interaction
-
-An OS has **multiple agents working simultaneously** in different areas.
+### 4. User Interface
+- Enables interaction with the OS
+- Types:
+  - **CLI** (Command Line Interface)
+  - **GUI** (Graphical User Interface)
 
 ---
 
-## Functions of an Operating System
+## User Space and Kernel Space (Essential Concept)
 
-Operating systems can be studied from the following aspects:
+- **Kernel Space**
+  - Where the kernel executes
+  - Has full access to hardware
 
-### Core (Mandatory)
+- **User Space**
+  - Where applications and user programs run
+  - Cannot directly access hardware
 
-- Process Management
-- CPU Scheduling
-- Memory Management
-- File & I/O Management
-- Hardware Abstraction
+Applications communicate with the kernel using **system calls**.
 
-### Optional (Common)
-
-- User Interface
-- Networking
-- Security & Protection
+A **system call** is a secure request from a user application to the OS kernel for services it cannot perform itself,
+such as accessing files, hardware, or managing processes.
 
 ---
 
-## Process Management
+## Summary
 
-### What is a Process?
+- The OS is essential for making hardware usable
+- It manages resources, controls programs, and provides abstraction
+- The kernel is the heart of the OS
+- Other components support usability, control, and maintenance
 
-> Any program loaded into memory is called a **Process**.
-
-Examples:
-- Running a command
-- Executing a script
-- Opening an application
-
-### Inter-Process Communication (IPC)
-
-IPC enables communication between processes.
-
-#### Types of IPC:
-
-- **Sockets**
-  - Used for network communication
-  - Client ↔ Server interaction
-- **Pipes**
-  - One process writes data, another reads it
-- **Named Pipes (FIFO)**
-  - Can communicate between different systems (different OS instances)
-
-### Useful Commands
-
-```bash
-ps
-ps -ef
-top
-htop
+---
