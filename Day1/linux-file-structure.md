@@ -96,6 +96,7 @@ These directories are created at runtime and are part of the **Virtual File Syst
 To access a file, you must specify its **path**.  
 A path is a string that defines the location of a file or directory in the filesystem.
 
+
 Example:
 /proc/533
 This means:
@@ -113,3 +114,5 @@ This means:
     
     - Starts from the **current working directory**.
     - Example: If you’re already in `/home/devops`, the relative path would be `python/demos/demo01.py`.
+
+---
